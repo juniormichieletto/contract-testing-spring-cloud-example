@@ -16,6 +16,7 @@
 
 	<properties>
 		<java.version>11</java.version>
+        <spring-cloud-contract-stub-runner.version>2.1.1.RELEASE</spring-cloud-contract-stub-runner.version>
 	</properties>
 
 	<dependencies>
@@ -29,6 +30,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-contract-stub-runner</artifactId>
+            <version>${spring-cloud-contract-stub-runner.version}</version>
+        </dependency>
 	</dependencies>
 
 	<build>
