@@ -1,5 +1,5 @@
 package com.fintech.creditcardservice.domain;
 
-public enum CreditCardStatus {
+public enum CardStatus {
     GRANTED
 }

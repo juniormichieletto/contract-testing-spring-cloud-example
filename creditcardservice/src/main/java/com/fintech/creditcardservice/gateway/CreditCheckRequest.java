@@ -1,4 +1,4 @@
-package com.fintech.creditcardservice.controller;
+package com.fintech.creditcardservice.gateway;
 
 public class CreditCheckRequest {
 

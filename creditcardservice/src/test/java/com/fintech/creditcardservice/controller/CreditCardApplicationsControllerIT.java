@@ -1,4 +1,4 @@
-package com.fintech.creditcardservice;
+package com.fintech.creditcardservice.controller;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,7 +23,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
     ids = "com.fintech:creditcheckservice:+:stubs:8080",
     stubsMode = StubRunnerProperties.StubsMode.LOCAL
 )
-public class CreditcardserviceApplicationTests {
+public class CreditCardApplicationsControllerIT {
 
 	@Autowired
 	private MockMvc mockMvc;
@@ -31,22 +31,21 @@ public class CreditcardserviceApplicationTests {
 	@Test
 	public void shouldGrantApplicationWhenCreditScoreIsHigh() throws Exception {
 		mockMvc.perform(post("/credit-card-applications")
-				.contentType(APPLICATION_JSON)
-				.content("{" +
-						"\"citizenNumber\": 1234," +
-						"\"cardType\": \"GOLD\"" +
-						"}"
-				)
+            .contentType(APPLICATION_JSON)
+            .content("{" +
+                "\"citizenNumber\": 1234," +
+                "\"cardType\": \"GOLD\"" +
+                "}"
+            )
 		)
-				.andDo(print())
-				.andExpect(status().isOk())
-				.andExpect(content()
-						.json("{" +
-								"\"status\":\"GRANTED\"" +
-								"}"
-						)
-				)
-				.andExpect(content().contentTypeCompatibleWith(APPLICATION_JSON));
+            .andDo(print())
+            .andExpect(status().isOk())
+            .andExpect(content()
+                .json("{" +
+                    "\"status\":\"GRANTED\"" +
+                    "}"
+                )
+            )
+            .andExpect(content().contentTypeCompatibleWith(APPLICATION_JSON));
 	}
-
 }

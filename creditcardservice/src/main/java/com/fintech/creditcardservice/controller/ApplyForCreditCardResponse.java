@@ -1,16 +1,16 @@
 package com.fintech.creditcardservice.controller;
 
-import com.fintech.creditcardservice.domain.CreditCardStatus;
+import com.fintech.creditcardservice.domain.CardStatus;
 
 public class ApplyForCreditCardResponse {
 
-    private final CreditCardStatus status;
+    private final CardStatus status;
 
-    public ApplyForCreditCardResponse(CreditCardStatus status) {
+    public ApplyForCreditCardResponse(CardStatus status) {
         this.status = status;
     }
 
-    public CreditCardStatus getStatus() {
+    public CardStatus getStatus() {
         return status;
     }
 }

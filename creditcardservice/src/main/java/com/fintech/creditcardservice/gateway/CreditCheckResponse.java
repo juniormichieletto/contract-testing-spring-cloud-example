@@ -1,4 +1,4 @@
-package com.fintech.creditcardservice.controller;
+package com.fintech.creditcardservice.gateway;
 
 import com.fintech.creditcardservice.domain.Score;
 
