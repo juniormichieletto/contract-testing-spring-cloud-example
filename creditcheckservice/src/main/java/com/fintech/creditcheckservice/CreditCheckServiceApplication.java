@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CreditcheckserviceApplication {
+public class CreditCheckServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CreditcheckserviceApplication.class, args);
+		SpringApplication.run(CreditCheckServiceApplication.class, args);
 	}
 
 }
