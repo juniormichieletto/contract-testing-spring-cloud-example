@@ -1,6 +1,6 @@
 WIP
 
-# contract-testing-microservices-spring-cloud-example
+# contract-testing-spring-cloud-example
 
 Example of contract testing for microservices using spring clould contract
 
@@ -10,7 +10,7 @@ Example of contract testing for microservices using spring clould contract
  - [x] Create contract example for HTTP comunication
  - [ ] Add multicontract example
  - [ ] Add more data examples
- - [ ] Add cemtraçozed contract repository
+ - [ ] Add centralized contract repository
  - [ ] Create contract example for Messaging based comunication
  - [ ] Add continuous integration with configuraiton
  - [ ] Add diagrams
