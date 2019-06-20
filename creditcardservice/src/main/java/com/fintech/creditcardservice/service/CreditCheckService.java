@@ -24,6 +24,6 @@ public class CreditCheckService {
         if (score == Score.HIGH && applyForCreditCardRequest.getCardType() == CardType.GOLD) {
             return new ApplyForCreditCardResponse(CardStatus.GRANTED);
         }
-        throw new RuntimeException("Card and score not yet implemented");
+        return new ApplyForCreditCardResponse(CardStatus.DENIED);
     }
 }
