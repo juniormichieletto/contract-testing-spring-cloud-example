@@ -6,11 +6,10 @@ Contract.make {
     request {
         method 'POST'
         url '/credit-scores'
-        body """
-            {
-                "citizenNumber" : 1234
-            }
-            """
+        body (
+            "citizenNumber" : 1234,
+            "requestDate" : anyDate()
+        )
         headers {
             contentType applicationJson()
         }
