@@ -23,7 +23,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
     ids = "com.fintech:creditcheckservice:+:stubs:8080",
     stubsMode = StubRunnerProperties.StubsMode.LOCAL
 )
-public class CreditCardApplicationsControllerIT {
+public class CreditCardApplicationsControllerTest {
 
 	@Autowired
 	private MockMvc mockMvc;
