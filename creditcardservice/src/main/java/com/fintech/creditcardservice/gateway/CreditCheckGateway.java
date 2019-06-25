@@ -1,6 +1,5 @@
 package com.fintech.creditcardservice.gateway;
 
-import com.fintech.creditcardservice.domain.Score;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -20,13 +19,12 @@ public class CreditCheckGateway {
         this.creditcheckserviceBaseUrl = creditcheckserviceBaseUrl;
     }
 
-    public Score doCreditCheckForCitizen(int citizenNumber) {
+    public CreditCheckResponse doCreditCheckForCitizen(int citizenNumber) {
         final String uri = UriComponentsBuilder.fromHttpUrl(creditcheckserviceBaseUrl)
             .path("credit-scores")
             .toUriString();
 
         return restTemplate
-            .postForObject(uri, new CreditCheckRequest(citizenNumber), CreditCheckResponse.class)
-            .getScore();
+            .postForObject(uri, new CreditCheckRequest(citizenNumber), CreditCheckResponse.class);
     }
 }

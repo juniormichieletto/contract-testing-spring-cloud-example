@@ -6,6 +6,7 @@ import com.fintech.creditcardservice.domain.CardType;
 import com.fintech.creditcardservice.domain.CardStatus;
 import com.fintech.creditcardservice.domain.Score;
 import com.fintech.creditcardservice.gateway.CreditCheckGateway;
+import com.fintech.creditcardservice.gateway.CreditCheckResponse;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -19,11 +20,15 @@ public class CreditCheckService {
 
     public ApplyForCreditCardResponse doCheckForCitizen(ApplyForCreditCardRequest applyForCreditCardRequest) {
 
-        final Score score = creditCheckGateway.doCreditCheckForCitizen(applyForCreditCardRequest.getCitizenNumber());
+        final CreditCheckResponse creditCheckResponse =
+            creditCheckGateway.doCreditCheckForCitizen(applyForCreditCardRequest.getCitizenNumber());
+
+        final Score score = creditCheckResponse.getScore();
+        final String uuid = creditCheckResponse.getUuid();
 
         if (score == Score.HIGH && applyForCreditCardRequest.getCardType() == CardType.GOLD) {
-            return new ApplyForCreditCardResponse(CardStatus.GRANTED);
+            return new ApplyForCreditCardResponse(CardStatus.GRANTED, uuid);
         }
-        return new ApplyForCreditCardResponse(CardStatus.DENIED);
+        return new ApplyForCreditCardResponse(CardStatus.DENIED, uuid);
     }
 }
