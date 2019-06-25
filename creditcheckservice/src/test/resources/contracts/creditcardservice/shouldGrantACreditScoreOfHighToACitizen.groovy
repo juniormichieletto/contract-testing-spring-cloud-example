@@ -18,7 +18,8 @@ Contract.make {
         status 200
         body """
             {
-                "score" : "HIGH" 
+                "score" : "HIGH" ,
+                "uuid": "66ce29f3-ae87-4097-94e8-60b3b10c3855"
             }
             """
         headers {
